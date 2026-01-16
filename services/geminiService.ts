@@ -46,11 +46,12 @@ export const analyzeFundamentalAI = async (metrics: StockMetrics): Promise<AIAna
     Gunakan Bahasa Indonesia Institusional, tajam, skeptis namun objektif. JANGAN MEMBERIKAN SARAN FINANSIAL ASAL-ASALAN.
   `;
 
+  // GANTI MODEL KE FLASH (Lebih Aman Kuota)
   const response = await ai.models.generateContent({
-    model: "gemini-3-pro-preview",
+    model: "gemini-3-flash-preview", 
     contents: prompt,
     config: {
-      thinkingConfig: { thinkingBudget: 32768 },
+      thinkingConfig: { thinkingBudget: 16000 }, // Budget disesuaikan untuk Flash
       responseMimeType: "application/json",
       responseSchema: {
         type: Type.OBJECT,
@@ -90,8 +91,9 @@ export const fetchPublicStockData = async (stockCode: string): Promise<PublicCom
   const ai = getAI(); // Inisialisasi di sini
 
   const prompt = `Cari data resmi TERBARU TAHUN 2026 untuk emiten: ${stockCode} di Bursa Efek Indonesia (IDX). Wajib sertakan Manajemen (Presdir, Direksi, Komisaris), Corporate Action, dan Statistik KSEI.`;
+  // GANTI MODEL KE FLASH
   const response = await ai.models.generateContent({
-    model: "gemini-3-pro-preview",
+    model: "gemini-3-flash-preview",
     contents: prompt,
     config: { tools: [{ googleSearch: {} }], responseMimeType: "application/json" }
   });
@@ -158,11 +160,12 @@ export const runDeepAnalisa = async (input: AnalisaInput): Promise<DeepAnalysisR
     - reasoning: List 5-7 poin fusion yang menggabungkan angka matematis feed dan psikologi bandar.
   `;
 
+  // GANTI MODEL KE FLASH (Lebih Aman Kuota)
   const response = await ai.models.generateContent({
-    model: "gemini-3-pro-preview",
+    model: "gemini-3-flash-preview",
     contents: prompt,
     config: { 
-      thinkingConfig: { thinkingBudget: 32768 }, 
+      thinkingConfig: { thinkingBudget: 16000 }, // Budget disesuaikan untuk Flash
       responseMimeType: "application/json",
       responseSchema: {
         type: Type.OBJECT,

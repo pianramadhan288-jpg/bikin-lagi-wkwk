@@ -44,11 +44,11 @@ const ChromeSentinel: React.FC = () => {
   const [msgIndex, setMsgIndex] = useState(0);
   const [displayText, setDisplayText] = useState('');
   const messages = [
-    "Variabel dihimpun, korelasi ditentukan.",
-    "Mengungkap lapisan tersembunyi.",
-    "Indikator dihitung, keseimbangan kekuatan tren ditetapkan.",
-    "Volatilitas ditakar, arah strategi dipastikan.",
-    "Ketepatan lahir dari disiplin data, bukan dari spekulasi."
+    "VVariabel dihimpun, korelasi ditentukan.",
+    "MMengungkap lapisan tersembunyi.",
+    "IIndikator dihitung, keseimbangan kekuatan tren ditetapkan.",
+    "VVolatilitas ditakar, arah strategi dipastikan.",
+    "KKetepatan lahir dari disiplin data, bukan dari spekulasi."
   ];
 
   useEffect(() => {
@@ -133,7 +133,7 @@ const App: React.FC = () => {
   }, [peers]);
 
   const [analisaInput, setAnalisaInput] = useState<AnalisaInput>({
-    stockCode: '', price: 0, orderBookStatus: 'Bid Tebal (Ideal)', tradeBookStatus: 'Buy Dominan', brokerSummaryVal: 50, avgPriceTop3: 0, topBrokers: '', rawIntelligenceData: ''
+    stockCode: '', price: 0, orderBookStatus: 'Bid Tebal', tradeBookStatus: 'Buy Dominan', brokerSummaryVal: 50, avgPriceTop3: 0, topBrokers: '', rawIntelligenceData: ''
   });
   const [publicData, setPublicData] = useState<PublicCompanyData | null>(null);
   const [deepResult, setDeepResult] = useState<DeepAnalysisResult | null>(null);
@@ -262,11 +262,11 @@ DISCLAIMER: ${deepResult.dynamicDisclaimer}
               <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-black/70 backdrop-blur-2xl animate-in fade-in duration-700">
                 <RobotLogo className="w-48 h-48 lg:w-80 lg:h-80 animate-pulse" />
                 <div className="mt-12 space-y-4 text-center">
-                  <p className="text-cyan-400 font-mono text-[11px] tracking-[1em] uppercase animate-pulse">Deep_Fundamental_Scanning</p>
+                  <p className="text-cyan-400 font-mono text-[11px] tracking-[1em] uppercase animate-pulse">Fundamental Scanning</p>
                   <div className="h-[2px] w-64 bg-white/10 rounded-full overflow-hidden mx-auto">
                     <div className="h-full bg-cyan-500 animate-[loading-bar_2s_infinite]"></div>
                   </div>
-                  <p className="text-slate-500 font-mono text-[9px] uppercase tracking-widest italic mt-4">ArthaVision AI Core is processing financial forensics...</p>
+                  <p className="text-slate-500 font-mono text-[9px] uppercase tracking-widest italic mt-4">Ve'Larc AI Core is processing financial forensics...</p>
                 </div>
               </div>
             )}
@@ -346,7 +346,7 @@ DISCLAIMER: ${deepResult.dynamicDisclaimer}
                   <div className="pt-8">
                      <button onClick={handleRunFundamental} disabled={isFundamentalLoading} className="w-full relative py-8 bg-white text-black font-black uppercase tracking-[0.5em] text-sm overflow-hidden group hover:bg-cyan-500 hover:text-white transition-all duration-700 rounded-xl">
                        <div className="absolute inset-0 w-full h-full bg-cyan-500 -translate-x-full group-hover:translate-x-0 transition-transform duration-700"></div>
-                       <span className="relative z-10">{isFundamentalLoading ? "SYNCHRONIZING_DATA..." : "INITIATE_AI_REASONING"}</span>
+                       <span className="relative z-10">{isFundamentalLoading ? "SYNCHRONIZING_DATA..." : "REASONING"}</span>
                      </button>
                   </div>
                 </div>
@@ -469,8 +469,8 @@ DISCLAIMER: ${deepResult.dynamicDisclaimer}
           <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-10 space-y-8 animate-in fade-in duration-700 pb-40">
              <div className="flex justify-between items-end border-b border-white/10 pb-6">
                 <div>
-                   <h1 className="text-4xl font-black text-white uppercase tracking-tighter italic">TACTICAL <span className="text-cyan-500">WAR ROOM</span></h1>
-                   <p className="text-[11px] font-mono text-slate-500 mt-2 uppercase tracking-widest">Bandarmology Telemetry System & AI Strategic Command</p>
+                   <h1 className="text-4xl font-black text-white uppercase tracking-tighter italic">Ve'<span className="text-cyan-500">Larc</span></h1>
+                   <p className="text-[11px] font-mono text-slate-500 mt-2 uppercase tracking-widest">Bandarmology Telemetry System & Strategic Command</p>
                 </div>
                 <div className="flex items-center gap-4">
                    <input type="text" placeholder="CODE" value={analisaInput.stockCode} onChange={(e) => setAnalisaInput({ ...analisaInput, stockCode: e.target.value.toUpperCase() })} className="w-32 bg-white/5 border border-white/10 p-3 text-center text-white font-mono font-bold text-xl uppercase focus:border-cyan-500 outline-none rounded-lg" />
@@ -509,18 +509,18 @@ DISCLAIMER: ${deepResult.dynamicDisclaimer}
                          <div>
                            <label className="text-[9px] text-slate-500 uppercase font-bold block mb-2">Order Book Structure</label>
                            <select value={analisaInput.orderBookStatus} onChange={(e)=>setAnalisaInput({...analisaInput, orderBookStatus: e.target.value})} className="w-full bg-black border border-white/10 p-3 text-white text-[11px] font-mono outline-none rounded-lg focus:border-cyan-500 transition-colors">
-                             <option>Bid Tebal (Ideal)</option>
-                             <option>Ask Tebal (Panic)</option>
-                             <option>Bid Tipis (Fake)</option>
+                             <option>Bid Tebal</option>
+                             <option>Ask Tebal</option>
+                             <option>Bid Tipis</option>
                              <option>Seimbang</option>
                            </select>
                          </div>
                          <div>
                            <label className="text-[9px] text-slate-500 uppercase font-bold block mb-2">Trade Book Action</label>
                            <select value={analisaInput.tradeBookStatus} onChange={(e)=>setAnalisaInput({...analisaInput, tradeBookStatus: e.target.value})} className="w-full bg-black border border-white/10 p-3 text-white text-[11px] font-mono outline-none rounded-lg focus:border-cyan-500 transition-colors">
-                             <option>Buy Dominan (Hajar Kanan)</option>
-                             <option>Sell Dominan (Hajar Kiri)</option>
-                             <option>Netral / Sepi</option>
+                             <option>Buy Dominan</option>
+                             <option>Sell Dominan</option>
+                             <option>Seimbang</option>
                            </select>
                          </div>
                       </div>
@@ -570,7 +570,7 @@ DISCLAIMER: ${deepResult.dynamicDisclaimer}
 
                    <button onClick={handleDeepAnalisa} disabled={isAnalisaLoading} className={`w-full py-6 font-black text-[12px] uppercase tracking-[0.4em] transition-all rounded-xl relative overflow-hidden group ${publicData ? 'bg-cyan-600 text-white shadow-[0_0_20px_rgba(8,145,178,0.4)]' : 'bg-white/5 text-slate-600'}`}>
                       <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
-                      <span className="relative z-10">{isAnalisaLoading ? 'PROCESSING...' : 'INITIATE FUSION ANALYSIS'}</span>
+                      <span className="relative z-10">{isAnalisaLoading ? 'PROCESSING...' : 'ANALYSIS'}</span>
                    </button>
                 </div>
 

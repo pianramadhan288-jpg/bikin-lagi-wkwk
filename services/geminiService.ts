@@ -404,6 +404,8 @@ Analisa ini adalah alat berpikir probabilistik, bukan mesin kepastian.
 Keunggulan datang bukan dari benar terus,
 tetapi dari mengetahui lebih cepat saat thesis mulai rusak.
 
+GAYA BAHASA:
+MENGGUNAKAN BAHASA INDONESIA.
   `;
 
   // GANTI MODEL KE FLASH (Lebih Aman Kuota)
